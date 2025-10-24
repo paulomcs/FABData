@@ -1,0 +1,25 @@
+Round,Table,Player 1 Name,Player 1 ID,Player 2 Name,Player 2 ID,Result
+1,1,Lucas Matos de Araújo,69518457,Felipe Santos,58337719,1WIN
+1,2,Mateus Oliveira Silva,95893671,Antônio Humberto,12427485,2WIN
+1,3,Gabriel Makai,18317156,Raul Nascimento,49431471,2WIN
+1,4,Paulo Sampaio,68572425,Pedro Artur Torres Costa,83291664,2WIN
+1,5,Elifas Neto,48287855,Lucas Sobral,98596597,2WIN
+1,6,NATHAN ROCHA,18317231,None,,1WIN
+2,1,NATHAN ROCHA,18317231,Raul Nascimento,49431471,1WIN
+2,2,Pedro Artur Torres Costa,83291664,Antônio Humberto,12427485,1WIN
+2,3,Lucas Matos de Araújo,69518457,Lucas Sobral,98596597,2WIN
+2,4,Paulo Sampaio,68572425,Felipe Santos,58337719,2WIN
+2,5,Gabriel Makai,18317156,Elifas Neto,48287855,2WIN
+2,6,Mateus Oliveira Silva,95893671,None,,1WIN
+3,1,NATHAN ROCHA,18317231,Lucas Sobral,98596597,2WIN
+3,2,Pedro Artur Torres Costa,83291664,Raul Nascimento,49431471,2WIN
+3,3,Lucas Matos de Araújo,69518457,Antônio Humberto,12427485,2WIN
+3,4,Elifas Neto,48287855,Mateus Oliveira Silva,95893671,1WIN
+3,5,Felipe Santos,58337719,Gabriel Makai,18317156,2WIN
+3,6,Paulo Sampaio,68572425,None,,1WIN
+4,1,Lucas Sobral,98596597,Pedro Artur Torres Costa,83291664,1WIN
+4,2,NATHAN ROCHA,18317231,Antônio Humberto,12427485,2WIN
+4,3,Raul Nascimento,49431471,Elifas Neto,48287855,1WIN
+4,4,Lucas Matos de Araújo,69518457,Paulo Sampaio,68572425,2WIN
+4,5,Felipe Santos,58337719,Mateus Oliveira Silva,95893671,1WIN
+4,6,Gabriel Makai,18317156,None,,1WIN
