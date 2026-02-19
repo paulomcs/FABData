@@ -1,0 +1,4 @@
+.season-btn.active {
+  font-weight: bold;
+  outline: 2px solid #000;
+}

@@ -4,15 +4,25 @@ export class Aggregator {
     const playerStats = {};
 
     tournaments.forEach(t => {
-      t.heroes.forEach(h => {
-        heroStats[h.hero] = heroStats[h.hero] || { count: 0, wins: 0 };
-        heroStats[h.hero].count++;
+      // HEROES: ignora linhas vazias e herói ausente
+      (t.heroes || []).forEach(h => {
+        const hero = (h.hero ?? "").toString().trim();
+        if (!hero) return; // <- mata o "undefined"
+        heroStats[hero] = heroStats[hero] || { count: 0, wins: 0 };
+        heroStats[hero].count++;
       });
 
-      t.standings.forEach(s => {
-        playerStats[s.name] = playerStats[s.name] || { totalWins: 0, appearances: 0 };
-        playerStats[s.name].totalWins += s.wins;
-        playerStats[s.name].appearances++;
+      // STANDINGS: fonte de verdade
+      (t.standings || []).forEach(s => {
+        const name = (s.name ?? "").toString().trim();
+        const wins = Number(s.wins);
+
+        if (!name) return;
+        if (!Number.isFinite(wins)) return; // evita NaN
+
+        playerStats[name] = playerStats[name] || { totalWins: 0, appearances: 0 };
+        playerStats[name].totalWins += wins;
+        playerStats[name].appearances++;
       });
     });
 

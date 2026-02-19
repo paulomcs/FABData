@@ -53,19 +53,33 @@ export class DataLoader {
     for (const collection of collections) {
       const files = await this.getCSVFiles(collection);
 
-      const data = {};
+      // Agrupa por "id do torneio" = nome do arquivo sem o sufixo -Heroes/-Pairings/-Standings
+      // Ex: 05.10.2025-SUP-Heroes.csv -> 05.10.2025-SUP
+      const groups = {};
       for (const file of files) {
-        const key = file
-          .replace('.csv', '')
-          .split('-')
-          .pop()
-          .toLowerCase(); // ex: heroes, pairings, standings
-        data[key] = await this.loadCSV(`${this.basePath}/${collection}/${file}`);
+        const tournamentId = file.replace(/-(Heroes|Pairings|Standings)\.csv$/i, '');
+        groups[tournamentId] = groups[tournamentId] || [];
+        groups[tournamentId].push(file);
       }
 
-      tournaments.push({ collection, ...data });
+      for (const tournamentId of Object.keys(groups)) {
+        const data = { collection, tournamentId };
+
+        for (const file of groups[tournamentId]) {
+          const key = file
+            .replace('.csv', '')
+            .split('-')
+            .pop()
+            .toLowerCase(); // heroes, pairings, standings
+
+          data[key] = await this.loadCSV(`${this.basePath}/${collection}/${file}`);
+        }
+
+        tournaments.push(data);
+      }
     }
 
     return tournaments;
   }
+
 }
